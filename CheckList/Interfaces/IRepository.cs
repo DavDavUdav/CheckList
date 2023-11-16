@@ -1,19 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CheckList.Interfaces;
 
-namespace CheckList.Interfaces
+internal interface IRepository<T> : IDisposable where T : class
 {
-    internal interface IRepository<T> : IDisposable where T : class
-    {
-        Task<IEnumerable<T>> GetEntityListAsync(); // получение всех объектов
-        Task<T> GetByIdAsync(int id); // получение одного объекта по id
-        void CreateAsync(T item); // создание объекта
-        void CreateAsync(IEnumerable<T> item); // создание объектов
-        void UpdateAsync(T item); // обновление объекта
-        void Delete(int id); // удаление объекта по id
-        void SaveAsync();  // сохранение изменений
-    }
+    /// <summary>
+    /// Получение всех объектов.
+    /// </summary>
+    /// <returns></returns>
+    Task<IEnumerable<T>> GetEntityListAsync();
+
+    /// <summary>
+    /// Получение одного объекта по id.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task<T> GetByIdAsync(int id); 
+        
+    /// <summary>
+    /// Создание объекта.
+    /// </summary>
+    /// <param name="item"></param>
+    void CreateAsync(T item);
+        
+    /// <summary>
+    /// Создание объектов.
+    /// </summary>
+    /// <param name="item"></param>
+    void CreateAsync(IEnumerable<T> item); 
+        
+    /// <summary>
+    /// Обновление объекта.
+    /// </summary>
+    /// <param name="item"></param>
+    void UpdateAsync(T item); 
+        
+    /// <summary>
+    /// Удаление объекта по id.
+    /// </summary>
+    /// <param name="id"></param>
+    void Delete(int id);
+        
+    /// <summary>
+    /// Сохранение изменений.
+    /// </summary>
+    void SaveAsync();
 }
+

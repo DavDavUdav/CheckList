@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CheckList.Database.Entities;
 
-namespace CheckList.Database.Entities
+internal class Board
 {
-    internal class Board
-    {
-        /// <summary>
-        /// Id доски.
-        /// </summary>
-        public int Id { get; set; }
+    /// <summary>
+    /// Id доски.
+    /// </summary>
+    public int Id { get; set; }
         
-        /// <summary>
-        /// Имя доски.
-        /// </summary>
-        public string Name { get; set; }
+    /// <summary>
+    /// Имя доски.
+    /// </summary>
+    public string? Name { get; set; }
         
-        /// <summary>
-        /// Описание.
-        /// </summary>
-        public string Description { get; set; }
+    /// <summary>
+    /// Описание.
+    /// </summary>
+    public string? Description { get; set; }
         
-        /// <summary>
-        /// Создатель доски.
-        /// </summary>
-        public int Creator {  get; set; }
-    }
+    /// <summary>
+    /// Создатель доски.
+    /// </summary>
+    public int Creator {  get; set; }
 }
+
